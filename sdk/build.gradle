@@ -1,0 +1,25 @@
+apply plugin: "com.android.feature"
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "26.0.0 rc2"
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 25
+        versionCode 32
+        versionName "1.2.1"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation project(':base')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:25.2.0'
+    //compile 'com.google.android.gms:play-services-location:11.0.0'
+}
